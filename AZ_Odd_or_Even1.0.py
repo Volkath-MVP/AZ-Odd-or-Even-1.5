@@ -12,6 +12,10 @@ Question.pack(pady=40) #This already works, so I’m not switching to .place :/
 #Result
 result=tk.Label(root, text="Where is your Motivation?", font=("Arial", 20))
 result.pack(pady=20) #This already works too, soooooo I’m not switching to .place :)
+#Message reset
+def reset_message():
+    global message
+    message=""
 #Odd or Even Function
 def check(AZ):
     global number, response
@@ -21,9 +25,9 @@ def check(AZ):
     root.after(800, lambda: result.config(text=""))
 #Buttons
 #button Odd
-Button_Odd = tk.Button(root, text="Impar", font=("Arial", 12))
+Button_Odd = tk.Button(root, text="Impar", font=("Arial", 12), command=lambda: check("Odd"))
 Button_Odd.place(relx=0.25, rely=0.60, anchor="center")
 #Button Even
-Button_Even = tk.Button(root, text="Par", font=("Arial", 12))
+Button_Even = tk.Button(root, text="Par", font=("Arial", 12), command=lambda: check("Even"))
 Button_Even.place(relx=0.75, rely=0.60, anchor="center")
 root.mainloop()#Keep window open
