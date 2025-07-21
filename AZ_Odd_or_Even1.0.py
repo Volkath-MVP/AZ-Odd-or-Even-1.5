@@ -12,6 +12,13 @@ Question.pack(pady=40) #This already works, so I’m not switching to .place :/
 #Result
 result=tk.Label(root, text="Where is your Motivation?", font=("Arial", 20))
 result.pack(pady=20) #This already works too, soooooo I’m not switching to .place :)
+#Função para atualizar a pergunta APÓS a resposta
+def update_number():
+    global number, message, result
+    number = ra.randint(1, 99)
+    Question.config(text=f"O número {number} é Ímpar ou Par?")
+    result.config(text="" )  #Reset message
+    message=""
 #Message reset
 def reset_message():
     global message
@@ -23,6 +30,8 @@ def check(AZ):
     message = "YOU HAVE POWER!" if response else "You need more Energy..."
     result.config(text = message, fg="Green" if response else "Red")
     root.after(800, lambda: result.config(text=""))
+    root.after(800, lambda: reset_message())
+    root.after(800, update_number)
 #Buttons
 #button Odd
 Button_Odd = tk.Button(root, text="Impar", font=("Arial", 12), command=lambda: check("Odd"))
