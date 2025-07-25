@@ -34,15 +34,15 @@ def V(response): #Yeah, I put "V" because I didn’t know what to name it :/
 #Odd or Even Function
 def check(AZ):#Yes, I added AZ in the code. I’m AZheaven, I need to leave my mark.
     global number, response
-    response = (number % 2 == 0 and AZ=="Even") or (number % 2 != 0 and AZ == "Odd")
-    message = "YOU HAVE POWER!" if response else "You need more Energy..."
-    result.config(text = message, fg="Green" if response else "Red")
+    response = (number % 2 == 0 and AZ=="Even") or (number % 2 != 0 and AZ == "Odd")#Calculates the number that was randomly generated and assigns "Even" or "Odd"
+    message = "YOU HAVE POWER!" if response else "You need more Energy..."#initial message
+    result.config(text = message, fg="Green" if response else "Red") #Message settings
     V(response)
     root.after(800, lambda: result.config(text=""))
     root.after(800, lambda: reset_message())
     root.after(800, update_number)
-Score=tk.Label(root, text=score, font=("Arial", 12))
-Score.place(relx=0.90, rely=0.30, anchor="center")
+Score=tk.Label(root, text=f"{score}", font=("Arial", 12))
+Score.place(relx=0.90, rely=0.30, anchor="center") # ".place" refers to the general positioning of things
 #Buttons
 #button Odd
 Button_Odd = tk.Button(root, text="Impar", font=("Arial", 12), command=lambda: check("Odd"))
