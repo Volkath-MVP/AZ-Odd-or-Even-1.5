@@ -25,14 +25,14 @@ def reset_message():
     message=""
 #Function that adds and subtracts the score.
 score = 0
-def V(response):
+def V(response): #Yeah, I put "V" because I didn’t know what to name it :/
     global score
     if response:
         score += 500 #score addition
     else:
         score -=800 #score subtraction
 #Odd or Even Function
-def check(AZ):
+def check(AZ):#Yes, I added AZ in the code. I’m AZheaven, I need to leave my mark.
     global number, response
     response = (number % 2 == 0 and AZ=="Even") or (number % 2 != 0 and AZ == "Odd")
     message = "YOU HAVE POWER!" if response else "You need more Energy..."
