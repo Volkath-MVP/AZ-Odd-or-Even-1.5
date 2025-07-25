@@ -24,6 +24,7 @@ def reset_message():
     global message
     message=""
 #Function that adds and subtracts the score.
+score = 0
 def V(response):
     global score
     if response:
@@ -40,6 +41,8 @@ def check(AZ):
     root.after(800, lambda: result.config(text=""))
     root.after(800, lambda: reset_message())
     root.after(800, update_number)
+Score=tk.Label(root, text=score, font=("Arial", 12))
+Score.place(relx=0.90, rely=0.30, anchor="center")
 #Buttons
 #button Odd
 Button_Odd = tk.Button(root, text="Impar", font=("Arial", 12), command=lambda: check("Odd"))
