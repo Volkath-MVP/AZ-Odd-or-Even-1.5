@@ -1,7 +1,6 @@
 #All libraries
 import tkinter as tk
 import random as ra
-import time
 root=tk.Tk() #Initialize window
 root.title("AZ Odd or Even")#Window title
 root.minsize(800, 600)#Minimum window size
@@ -52,6 +51,12 @@ Score.place(relx=0.90, rely=0.30, anchor="center") # ".place" refers to the gene
 def descending_score():
     global score
     score-= 100 #amount drained
+    if score >= 5000:
+        score-=50
+    elif score>=3000:
+        score -= 50
+    elif score>=2000:
+        score -= 50
     if score <0:
         score = 0
     Score.config(text=f"{score}")#text update, since without it the change isn’t visible
@@ -77,6 +82,7 @@ def atualizar_rank():
     else:
         rank_text = ""
     rank_label.config(text=f"{rank_text}")
+    root.after(1000, atualizar_rank)
 rank_label=tk.Label(root, text=f"{rank_text}", font=("Arial", 12))
 rank_label.place(relx=0.90, rely=0.20, anchor="center")
 #Buttons
@@ -86,5 +92,6 @@ Button_Odd.place(relx=0.25, rely=0.60, anchor="center")
 #Button Even
 Button_Even = tk.Button(root, text="Par", font=("Arial", 12), command=lambda: check("Even"))
 Button_Even.place(relx=0.75, rely=0.60, anchor="center")
+atualizar_rank()
 descending_score()
 root.mainloop()#Keep window open
