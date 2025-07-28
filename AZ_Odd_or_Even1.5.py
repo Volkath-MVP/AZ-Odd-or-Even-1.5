@@ -1,6 +1,7 @@
 #All libraries
 import tkinter as tk
 import random as ra
+import time
 root=tk.Tk() #Initialize window
 root.title("AZ Odd or Even")#Window title
 root.minsize(800, 600)#Minimum window size
@@ -47,6 +48,14 @@ def V(response): #Yeah, I put "V" because I didn’t know what to name it :/
     Score.config(text=f"{score}")  #Updates the score in the text. I hadn’t thought of that... Ah... It was the f-string... I had forgotten :/
 Score=tk.Label(root, text=f"{score}", font=("Arial", 12))
 Score.place(relx=0.90, rely=0.30, anchor="center") # ".place" refers to the general positioning of things
+#Score draining function
+def descending_score():
+    global score
+    score-= 100 #amount drained
+    if score <0:
+        score = 0
+    Score.config(text=f"{score}")#text update, since without it the change isn’t visible
+    root.after(1000, descending_score) #seconds during which the score is drained
 #Function to update the rank
 rank_text= ""
 def atualizar_rank():
@@ -77,4 +86,5 @@ Button_Odd.place(relx=0.25, rely=0.60, anchor="center")
 #Button Even
 Button_Even = tk.Button(root, text="Par", font=("Arial", 12), command=lambda: check("Even"))
 Button_Even.place(relx=0.75, rely=0.60, anchor="center")
+descending_score()
 root.mainloop()#Keep window open
