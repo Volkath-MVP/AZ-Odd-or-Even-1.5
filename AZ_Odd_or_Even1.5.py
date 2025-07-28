@@ -51,33 +51,43 @@ Score.place(relx=0.90, rely=0.30, anchor="center") # ".place" refers to the gene
 def descending_score():
     global score
     score-= 100 #amount drained
-    if score >= 5000:
+    if score >= 7000:
         score-=50
-    elif score>=3000:
+    elif score>=5000:
         score -= 50
-    elif score>=2000:
+    elif score>=4000:
+        score -= 50
+    elif score>=3000:
         score -= 50
     if score <0:
         score = 0
     Score.config(text=f"{score}")#text update, since without it the change isn’t visible
     root.after(1000, descending_score) #seconds during which the score is drained
+#Rank variables
+RankSSS=11600
+RankSS=9600
+RankS= 7600
+RankA = 5900
+RankB=4200
+RankC= 2700
+RankD = 1200
 #Function to update the rank
 rank_text= ""
 def atualizar_rank():
     global score, rank_text
-    if score >= 7000:
+    if score >= RankSSS:
         rank_text = "SSS"
-    elif score >= 6000:
+    elif score >= RankSS:
         rank_text = "SS"
-    elif score >= 5000:
+    elif score >= RankS:
         rank_text = "S"
-    elif score >= 4000:
+    elif score >= RankA:
         rank_text = "A"
-    elif score>= 3000:
+    elif score>= RankB:
         rank_text = "B"
-    elif score>= 2000:
+    elif score>= RankC:
         rank_text = "C"
-    elif score>=1000:
+    elif score>=RankD:
         rank_text = "D"
     else:
         rank_text = ""
