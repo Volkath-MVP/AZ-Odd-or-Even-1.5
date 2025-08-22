@@ -47,6 +47,19 @@ def V(response): #Yeah, I put "V" because I didn’t know what to name it :/
     Score.config(text=f"{score}")  #Updates the score in the text. I hadn’t thought of that... Ah... It was the f-string... I had forgotten :/
 Score=tk.Label(root, text=f"{score}", font=("Arial", 12))
 Score.place(relx=0.90, rely=0.30, anchor="center") # ".place" refers to the general positioning of things
+#⢸⠢⡀                              ⡠⡆
+#       ⢸  ⣈⠢⡀                      ⡠⠊  ⡇
+#       ⢸  ⣿⣷⣌⠢⠖⠊⠉⠉⠉⠉⠒⠢⠤⠊⣠⣾⡇ ⡇
+#       ⢸  ⣿⣿⡿⠗      ⣀⠤⠒⠒⢄⡀⠘⠿⣿⡇ ⡇
+#       ⢸  ⠉⠁      ⡠⠊          ⠈⠑⢄  ⠁⠈⠢⡀  ⢀⡀
+#     ⢠⠃        ⢠⢊⣴⡄            ⢀⣶⠑⢄    ⠈⠉⠁⢈⠆
+#⢠⠢⣀⣸        ⢰⠁⢸⣿⡇            ⣸⣿    ⢣    ⠐⡍⠁
+#⠈⠢⣀⣠        ⡇  ⠸⡿⠁  ⡀        ⠹⠟  ⡠⠊⢇    ⠸⡀
+#     ⠘⣄      ⣇⡀        ⠙⠒⠒⠊  ⣀⠤⠒⠁  ⢸    ⢀⠇
+#       ⠈⠢⡀  ⢣⣨⣝⡒⢶⣶⡒⠲⣶⠊⢻⣧⣩⣶⠖⠢⢎  ⢀⠎
+#         ⢀⡈⠙⢅    ⠉⢹⣿⣿⣷⣿⣷⣿⣿⣿⣇⡀⢀⠜⡔⠁
+#         ⢸⣿⡦  ⠑⠒⢾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠁⣔⠕⢊⠆
+#         ⠈⠙⠿⣦⣤⣤⣾⣿⣿⡿⠁    ⠑⢌⡻⣿⣿⣦⠤⠔⠁
 #Score draining function
 def descending_score():
     global score

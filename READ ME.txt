@@ -1,0 +1,7 @@
+Português: O arquivo ".exe" está na pasta DIST. Yeah, eu escrevi um READ ME só para isso... Me senti o programador supremo :3
+
+
+Inglês:	The ".exe" file is in the DIST folder. Yeah, I wrote a README just for that… I felt like the ultimate programmer :3
+
+
+Alemão:	Die „.exe“-Datei befindet sich im DIST-Ordner. Ja, ich habe extra dafür eine README geschrieben… Ich fühlte mich wie der ultimative Programmierer :3
